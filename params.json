@@ -13,7 +13,7 @@
   "permissions": [
     {
       "group": "data_team",
-      "admin": false,
+      "admin": true,
       "readProjectContent": false,
       "writeProjectContent": true,
       "exportDatasetsData": true,
@@ -201,11 +201,11 @@
     }
   },
   "versionTag": {
-    "versionNumber": 1,
+    "versionNumber": 2,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1648238466351
+    "lastModifiedOn": 1648238470446
   },
   "creationTag": {
     "versionNumber": 0,
