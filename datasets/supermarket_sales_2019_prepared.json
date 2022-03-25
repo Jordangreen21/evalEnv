@@ -1,0 +1,202 @@
+{
+  "type": "S3",
+  "managed": true,
+  "formatType": "csv",
+  "checklists": {
+    "checklists": []
+  },
+  "checks": [],
+  "customMeta": {
+    "kv": {}
+  },
+  "flowOptions": {
+    "virtualizable": false,
+    "rebuildBehavior": "NORMAL",
+    "crossProjectBuildBehavior": "DEFAULT"
+  },
+  "readWriteOptions": {
+    "preserveOrder": false,
+    "writeBuckets": 1,
+    "forceSingleOutputFile": false,
+    "defaultReadOrdering": {
+      "enabled": false,
+      "rules": []
+    }
+  },
+  "formatParams": {
+    "style": "escape_only_no_quote",
+    "charset": "utf8",
+    "separator": "\t",
+    "quoteChar": "\"",
+    "escapeChar": "\\",
+    "arrayItemSeparator": "\u0002",
+    "mapKeySeparator": "\u0003",
+    "dateSerializationFormat": "HIVE",
+    "arrayMapFormat": "hive",
+    "hiveSeparators": [
+      "\u0002",
+      "\u0003",
+      "\u0004",
+      "\u0005",
+      "\u0006",
+      "\u0007",
+      "\b"
+    ],
+    "skipRowsBeforeHeader": 0,
+    "parseHeaderRow": false,
+    "skipRowsAfterHeader": 0,
+    "probableNumberOfRecords": 0,
+    "normalizeBooleans": false,
+    "normalizeDoubles": true,
+    "readAdditionalColumnsBehavior": "INSERT_IN_DATA_WARNING",
+    "readMissingColumnsBehavior": "DISCARD_SILENT",
+    "readDataTypeMismatchBehavior": "DISCARD_WARNING",
+    "writeDataTypeMismatchBehavior": "DISCARD_WARNING",
+    "fileReadFailureBehavior": "FAIL",
+    "compress": ""
+  },
+  "partitioning": {
+    "ignoreNonMatchingFile": false,
+    "considerMissingRequestedPartitionsAsEmpty": false,
+    "dimensions": []
+  },
+  "versionTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "bruce.mills"
+    },
+    "lastModifiedOn": 1648238839958
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "bruce.mills"
+    },
+    "lastModifiedOn": 1648238839958
+  },
+  "tags": [],
+  "params": {
+    "bucket": "se-sandbox-eu",
+    "metastoreSynchronizationEnabled": true,
+    "metastoreDatabaseName": "dataiku",
+    "metastoreTableName": "${projectKey}_supermarket_sales_2019_prepared",
+    "connection": "s3-managed",
+    "path": "/hFBvJb3XRCGgAqS9b9ynbdEM/${projectKey}/supermarket_sales_2019_prepared",
+    "notReadyIfEmpty": false,
+    "filesSelectionRules": {
+      "mode": "ALL",
+      "excludeRules": [],
+      "includeRules": [],
+      "explicitFiles": []
+    }
+  },
+  "schema": {
+    "columns": [
+      {"name":"Invoice ID","type":"string"},
+      {"name":"Branch","type":"string"},
+      {"name":"City","type":"string"},
+      {"name":"Customer type","type":"string"},
+      {"name":"Gender","type":"string"},
+      {"name":"Product line","type":"string"},
+      {"name":"Unit price","type":"double"},
+      {"name":"Quantity","type":"bigint"},
+      {"name":"Tax 5%","type":"double"},
+      {"name":"Total","type":"double"},
+      {"name":"Date","type":"string"},
+      {"name":"Date_parsed","type":"date"},
+      {"name":"Date_parsed_year","type":"bigint"},
+      {"name":"month_year","type":"string"},
+      {"name":"Date_month","type":"bigint"},
+      {"name":"Date_parsed_day","type":"bigint"},
+      {"name":"Time","type":"string"},
+      {"name":"Payment","type":"string"},
+      {"name":"cogs","type":"double"},
+      {"name":"gross margin percentage","type":"double"},
+      {"name":"gross income","type":"double"},
+      {"name":"Rating","type":"double"}
+    ],
+    "userModified": true
+  },
+  "dkuProperties": [],
+  "metrics": {
+    "probes": [
+      {
+        "type": "basic",
+        "enabled": true,
+        "computeOnBuildMode": "PARTITION",
+        "meta": {
+          "name": "Basic data",
+          "level": 0
+        },
+        "configuration": {}
+      },
+      {
+        "type": "records",
+        "enabled": true,
+        "computeOnBuildMode": "NO",
+        "meta": {
+          "name": "Record count",
+          "level": 0
+        },
+        "configuration": {}
+      }
+    ],
+    "engineConfig": {
+      "padRunsWithMetrics": false,
+      "hive": {
+        "active": true,
+        "extraConf": []
+      },
+      "basic": {},
+      "dss": {
+        "active": true,
+        "selection": {
+          "useMemTable": false,
+          "filter": {
+            "distinct": false,
+            "enabled": false
+          },
+          "partitionSelectionMethod": "ALL",
+          "latestPartitionsN": 1,
+          "ordering": {
+            "enabled": false,
+            "rules": []
+          },
+          "samplingMethod": "FULL",
+          "maxRecords": -1,
+          "targetRatio": 0.02,
+          "withinFirstN": -1,
+          "maxReadUncompressedBytes": -1
+        }
+      },
+      "sql": {
+        "active": true
+      },
+      "impala": {
+        "active": true
+      },
+      "spark": {
+        "active": true,
+        "extraConf": []
+      },
+      "python": {}
+    },
+    "displayedState": {
+      "columns": [],
+      "metrics": [
+        "basic:COUNT_COLUMNS",
+        "basic:COUNT_FILES",
+        "basic:SIZE",
+        "records:COUNT_RECORDS"
+      ]
+    }
+  },
+  "metricsChecks": {
+    "runOnBuild": false,
+    "checks": [],
+    "displayedState": {
+      "checks": []
+    }
+  },
+  "customFields": {}
+}
